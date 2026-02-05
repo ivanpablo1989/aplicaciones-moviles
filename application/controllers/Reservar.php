@@ -137,35 +137,35 @@ class Reservar extends CI_Controller
         $this->load->view('footer_footer/footer_footer_usuario', $data);
     }
 
-    // ---------------------- CANCELAR RESERVA ----------------------
+   // ---------------------- CANCELAR RESERVA ----------------------
+public function cancelar_reserva($id_reserva)
+{
+    $usuario_id = $this->session->userdata('id_usuario');
+    $reserva    = $this->reserva->obtener_reserva_por_id($id_reserva);
 
-    public function cancelar_reserva($id_reserva)
+    if (!$reserva)
     {
-        $usuario_id = $this->session->userdata('id_usuario');
-        $reserva    = $this->reserva->obtener_reserva_por_id($id_reserva);
-
-        if ( !$reserva)
+        $this->session->set_flashdata('mensaje', 'Reserva no encontrada.');
+    }
+    elseif ($reserva['usuario_id'] != $usuario_id)
+    {
+        $this->session->set_flashdata('mensaje', 'No tienes permiso.');
+    }
+    else
+    {
+        if ($this->reserva->cancelar_reserva($id_reserva))
         {
-            $this->session->set_flashdata('mensaje','Reserva no encontrada.');
-        }
-        elseif ($reserva['usuario_id'] != $usuario_id)
-        {
-            $this->session->set_flashdata('mensaje','No tienes permiso.');
+            $this->session->set_flashdata('mensaje', 'Reserva cancelada correctamente.');
         }
         else
         {
-            if ($this->reserva->eliminar_reserva($id_reserva))
-            {
-                $this->session->set_flashdata('mensaje','Reserva cancelada.');
-            }
-            else
-            {
-                $this->session->set_flashdata('mensaje','No se pudo cancelar.');
-            }
+            $this->session->set_flashdata('mensaje', 'No se pudo cancelar la reserva.');
         }
-
-        redirect('reservar/listar_reservas');
     }
+
+    redirect('reservar/listar_reservas');
+}
+
 
     public function generar_pdf($id_espectaculo)
     {
