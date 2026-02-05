@@ -16,7 +16,7 @@ class Usuario extends Seguridad
         $this->load->helper(['url', 'form']);
 
         // PROTECCION GLOBAL
-        if (!$this->session->userdata('logged_in'))
+        if ( !$this->session->userdata('logged_in'))
         {
             redirect('login');
             exit;
@@ -44,7 +44,7 @@ class Usuario extends Seguridad
     }
 
     // CREAR NUEVO USUARIO
-   
+
     public function crear_usuario()
     {
         $this->validar_usuario(true);
@@ -70,11 +70,8 @@ class Usuario extends Seguridad
             'nombre'         => $this->input->post('nombre', true),
             'apellido'       => $this->input->post('apellido', true),
             'nombre_usuario' => $this->input->post('email', true),
-            'palabra_clave'  => password_hash($this->input->post('password', true),
-            PASSWORD_DEFAULT
-        ),
-        
-        'rol_id'         => 1 
+            'palabra_clave'  => $this->input->post('password', true), // contraseña sin encriptar
+            'rol_id'         => 1 
         ];
 
         if ($this->Usuario_modelo->registrar_usuario($usuario_data))
@@ -88,6 +85,9 @@ class Usuario extends Seguridad
 
         redirect('administrador');
     }
+
+
+    // EDITAR USUARIO
 
     // EDITAR USUARIO
     public function editar_usuario($id_usuario)
@@ -115,15 +115,17 @@ class Usuario extends Seguridad
         [
             'nombre'         => $this->input->post('nombre', true),
             'apellido'       => $this->input->post('apellido', true),
-            'nombre_usuario' => $this->input->post('email', true)
+            'nombre_usuario' => $this->input->post('email', true),
+            'dni'            => $this->input->post('dni', true),
+            'telefono'       => $this->input->post('telefono', true)
         ];
 
-        // Si se envió una contraseña nueva
-        
+        // Si se envió una contraseña nueva (sin encriptar)
         $password = $this->input->post('password', true);
+
         if ( !empty($password))
         {
-            $data['palabra_clave'] = password_hash($password,PASSWORD_DEFAULT) ;
+            $data['palabra_clave'] = $password;
         }
 
         if ($this->Usuario_modelo->actualizar_usuario($id_usuario, $data))
@@ -132,14 +134,13 @@ class Usuario extends Seguridad
         }
         else
         {
-            $this->session->set_flashdata('error', 'Ocurrió un error al actualizar el usuario.');
+            $this->session->set_flashdata('error', 'Ocurrio un error al actualizar el usuario.');
         }
 
         redirect('administrador');
     }
 
-
-    // ESPECTÁCULOS
+    // ESPECTACULOS
     public function usuario_espectaculos()
     {
         $data = 
@@ -175,12 +176,13 @@ class Usuario extends Seguridad
     }
 
     // DETALLE DE RESERVA
+
     public function usuario_reservas_detalle($id_reserva)
     {
         $id_usuario = $this->session->userdata('id_usuario');
         $reserva    = $this->Reserva_modelo->obtener_reserva_detalle($id_reserva, $id_usuario);
 
-        if (!$reserva)
+        if ( !$reserva)
         {
             show_error('Reserva no encontrada.', 404);
         }
@@ -219,34 +221,37 @@ class Usuario extends Seguridad
         }
     }
 
-    // ELIMINAR USUARIO
+    // ELIMINAR / DESACTIVAR USUARIO
+
     public function eliminar_usuario($id_usuario)
     {
         $usuario = $this->Usuario_modelo->obtener_usuario_por_id($id_usuario);
 
-        if ( !$usuario)
+        if ( !$usuario) 
         {
             show_error('Usuario no encontrado.', 404);
+
             return;
         }
 
-        if ($this->Usuario_modelo->usuario_tiene_clientes($id_usuario))
+        // Opcional: mostrar mensaje si tiene clientes o reservas
+
+        if ($this->Usuario_modelo->usuario_tiene_clientes($id_usuario) || $this->Usuario_modelo->usuario_tiene_reservas($id_usuario)) 
         {
-            $this->session->set_flashdata('error','No se puede eliminar el usuario: tiene clientes asociados.');
-            redirect('administrador');
-            return;
+            $this->session->set_flashdata('info', 'El usuario tiene registros asociados. Se desactivará sin eliminar sus datos.');
         }
 
-        if ($this->Usuario_modelo->eliminar_usuario($id_usuario))
+        if ($this->Usuario_modelo->eliminar_usuario($id_usuario)) 
         {
-            $this->session->set_flashdata('success','Usuario eliminado correctamente.');
-        }
-        else
+            $this->session->set_flashdata('success', 'Usuario eliminado correctamente.');
+        } 
+        else 
         {
-            $this->session->set_flashdata('error','Ocurrió un error al eliminar el usuario.');
+            $this->session->set_flashdata('error', 'No se pudo eliminar el usuario.');
         }
 
         redirect('administrador');
     }
 }
+
 ?>

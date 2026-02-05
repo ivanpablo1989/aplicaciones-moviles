@@ -44,6 +44,18 @@
                     <div class="error-msg"><?= form_error('password'); ?></div>
                 </div>
 
+                <div class="form-group">
+                    <label class="form-label">DNI</label>
+                    <input type="number" name="dni" value="<?= set_value('dni', $usuario->dni ?? '') ?>" class="<?= form_error('dni') ? 'error-input' : '' ?>" required>
+                    <div class="error-msg"><?= form_error('dni'); ?></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Teléfono</label>
+                    <input type="text" name="telefono" value="<?= set_value('telefono', $usuario->telefono ?? '') ?>" class="<?= form_error('telefono') ? 'error-input' : '' ?>">
+                    <div class="error-msg"><?= form_error('telefono'); ?></div>
+                </div>
+
             </div>
 
             <div class="botones-finales">
@@ -58,3 +70,4 @@
     <p class="footer-text">Asegurate de revisar todos los datos antes de guardar los cambios.</p>
 
 </main>
+

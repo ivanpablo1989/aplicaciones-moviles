@@ -138,34 +138,34 @@ class Reservar extends CI_Controller
     }
 
    // ---------------------- CANCELAR RESERVA ----------------------
-public function cancelar_reserva($id_reserva)
-{
-    $usuario_id = $this->session->userdata('id_usuario');
-    $reserva    = $this->reserva->obtener_reserva_por_id($id_reserva);
+   
+    public function cancelar_reserva($id_reserva)
+    {
+        $usuario_id = $this->session->userdata('id_usuario');
+        $reserva    = $this->reserva->obtener_reserva_por_id($id_reserva);
 
-    if (!$reserva)
-    {
-        $this->session->set_flashdata('mensaje', 'Reserva no encontrada.');
-    }
-    elseif ($reserva['usuario_id'] != $usuario_id)
-    {
-        $this->session->set_flashdata('mensaje', 'No tienes permiso.');
-    }
-    else
-    {
-        if ($this->reserva->cancelar_reserva($id_reserva))
+        if ( !$reserva)
         {
-            $this->session->set_flashdata('mensaje', 'Reserva cancelada correctamente.');
+            $this->session->set_flashdata('mensaje', 'Reserva no encontrada.');
+        }
+        elseif ($reserva['usuario_id'] != $usuario_id)
+        {
+            $this->session->set_flashdata('mensaje', 'No tienes permiso.');
         }
         else
         {
-            $this->session->set_flashdata('mensaje', 'No se pudo cancelar la reserva.');
+            if ($this->reserva->cancelar_reserva($id_reserva))
+            {
+                $this->session->set_flashdata('mensaje', 'Reserva cancelada correctamente.');
+            }
+            else
+            {
+                $this->session->set_flashdata('mensaje', 'No se pudo cancelar la reserva.');
+            }
         }
+
+        redirect('reservar/listar_reservas');
     }
-
-    redirect('reservar/listar_reservas');
-}
-
 
     public function generar_pdf($id_espectaculo)
     {
@@ -217,7 +217,7 @@ public function cancelar_reserva($id_reserva)
             $mail->setFrom('ivaninfonet@gmail.com', 'Sistema de Reservas');
             $mail->addAddress($email);
             $mail->isHTML(true);
-            $mail->Subject = 'Confirmación de reserva';
+            $mail->Subject = 'Confirmacion de reserva';
             $mail->Body = '<p>Adjunto comprobante.</p>';
             $mail->addAttachment(FCPATH.'uploads/'.$filename);
 

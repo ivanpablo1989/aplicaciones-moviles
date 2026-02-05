@@ -110,7 +110,8 @@ body, .main-content {
    ======================= */
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="number"] {
     padding: 6px 8px;
     font-size: 16px; /* Agrandado */
     border-radius: 6px;
