@@ -10,17 +10,10 @@
 /* ======================================================
    BASE Y FONDO
 ====================================================== */
-html {
+html, body {
     min-height: 100%;
-}
-
-body {
-    min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
-
-    /* Blancos más blancos */
     color: #ffffff;
-
     background-color: #0b0b0b;
     background-size: cover;
     background-position: center top;
@@ -54,16 +47,17 @@ body {
 }
 
 .mensaje-bienvenida {
-    font-size: 3.4rem;
+    font-size: 3.6rem;
     font-weight: 700;
     margin-bottom: 18px;
     color: #ffffff;
+    margin-top: -20px; /* sube el título */
 }
 
 .mensaje-sub {
-    font-size: 1.5rem;
-    line-height: 1.9;
-    color: #f1f1f1;
+    font-size: 1.85rem;
+    line-height: 1.85;
+    color: #ffeb3b; /* amarillo */
 }
 
 /* ======================================================
@@ -86,21 +80,17 @@ body {
    TARJETA
 ====================================================== */
 .tarjeta {
-    background: rgba(0, 0, 0, 0.45); /* MÁS NEGRO */
+    background: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(12px);
-
     border-radius: 18px;
     padding: 36px;
     text-align: center;
-
     display: flex;
     flex-direction: column;
     gap: 20px;
-
     max-width: 380px;
     width: 100%;
     margin: 0 auto;
-
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -127,9 +117,11 @@ body {
 }
 
 .descripcion {
-    font-size: 1.6rem; /* MÁS GRANDE */
+    font-size: 1.6rem;
     line-height: 1.85;
-    color: #ffffff;
+    color: #ffeb3b; /* amarillo */
+    white-space: normal; /* permite varias líneas */
+    word-wrap: break-word; /* corta palabra si es necesario */
 }
 
 .precio {
@@ -151,7 +143,6 @@ body {
     text-decoration: none;
     border-radius: 10px;
     width: fit-content;
-
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -165,11 +156,11 @@ body {
 ====================================================== */
 .texto-general {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     line-height: 1.8;
     margin: 65px auto 0;
     max-width: 1000px;
-    color: #ffffff;
+    color: #ffeb3b;
 }
 
 /* ======================================================
@@ -193,14 +184,15 @@ body {
 
 @media (max-width: 768px) {
     .mensaje-bienvenida {
-        font-size: 2.7rem;
+        font-size: 2.8rem;
+        margin-top: -10px;
     }
 
     .mensaje-sub {
-        font-size: 1.35rem;
+        font-size: 1.55rem;
     }
 
     .texto-general {
-        font-size: 1.55rem;
+        font-size: 1.65rem;
     }
 }

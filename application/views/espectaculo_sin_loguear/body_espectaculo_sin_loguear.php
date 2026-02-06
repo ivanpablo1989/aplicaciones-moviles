@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,41 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($titulo); ?></title>
 
-    <!-- CSS personalizado -->
     <link rel="stylesheet" href="<?= base_url('activos/css/espectaculo_sin_loguear/body_espectaculo_sin_loguear.css?v=' . time()) ?>">
 </head>
 
 <body>
 
-    <!-- Fondo general -->
+    <!-- Fondo -->
     <div class="fondo-body" style="background-image: url('<?= htmlspecialchars($fondo) ?>');" aria-hidden="true"></div>
 
-    <!-- Título y descripción principales fuera de la tarjeta -->
+    <!-- Intro -->
     <header class="intro-text">
-        <h1>La Mejor Función</h1>
-        <p>Lo mejor para vos</p>
+        <h1>La Mejor Función de todos los tiempos</h1>
+        <p>El recital mas excepciona de la historia de la musica. La mejor experiencia</p>
     </header>
 
-    <!-- Tarjeta espectáculo -->
+    <!-- Tarjeta -->
     <main class="registro-container">
         <article class="tarjeta-espectaculo">
 
-            <!-- Nombre y descripción dentro de la tarjeta -->
             <section class="espectaculo-info">
                 <h2 class="espectaculo-nombre"><?= htmlspecialchars($espectaculo['nombre']) ?></h2>
                 <p class="espectaculo-descripcion"><?= htmlspecialchars($espectaculo['descripcion']) ?></p>
             </section>
 
-            <!-- Imagen centrada debajo del título y descripción -->
             <figure class="imagen">
                 <img 
                     src="<?= base_url('activos/imagenes/' . $espectaculo['imagen']) ?>" 
-                    alt="Imagen del espectáculo: <?= htmlspecialchars($espectaculo['nombre']) ?>" 
+                    alt="Imagen del espectáculo"
                     class="imagen-espectaculo">
             </figure>
 
-            <!-- Detalles -->
-            <section class="detalles" aria-label="Detalles del espectáculo">
+            <section class="detalles">
                 <ul class="detalles-fila">
                     <li><strong>Fecha:</strong> <?= htmlspecialchars($espectaculo['fecha']) ?></li>
                     <li><strong>Hora:</strong> <?= htmlspecialchars($espectaculo['hora']) ?></li>
@@ -49,14 +46,12 @@
                 </ul>
             </section>
 
-            <!-- Estado -->
-            <section class="informacion" aria-live="polite">
+            <section class="informacion">
                 <p class="estado <?= $espectaculo['disponibles'] > 0 ? 'disponible' : 'agotado' ?>">
                     <?= $espectaculo['disponibles'] > 0 ? '¡Todavía hay lugares disponibles!' : 'Entradas agotadas.' ?>
                 </p>
             </section>
 
-            <!-- Login / Reservas -->
             <section class="reserva-login">
                 <p class="texto-login">Para reservar entradas, primero debés iniciar sesión.</p>
                 <a href="<?= site_url('login') ?>" class="boton-login">Iniciar sesión</a>
@@ -65,17 +60,23 @@
         </article>
     </main>
 
-    <!-- Mapa -->
+    <!-- MAPA -->
     <section class="mapa-section">
         <h2 class="mapa-titulo">Ubicación del espectáculo</h2>
-        <p class="mapa-descripcion">Encontrá fácilmente el lugar del evento en el mapa para organizar tu llegada.</p>
+
+        <p class="mapa-descripcion">
+            Encontrá fácilmente el lugar del evento en el mapa para organizar tu llegada.
+        </p>
+
         <div class="mapa-externa">
-            <img src="<?= base_url('activos/imagenes/mapa.jfif') ?>" alt="Mapa del lugar del espectáculo" class="imagen-mapa">
+            <img src="<?= base_url('activos/imagenes/mapa.jfif') ?>" alt="Mapa del lugar" class="imagen-mapa">
         </div>
     </section>
 
-    <!-- Texto debajo del mapa -->
-    <p class="texto-debajo-mapa">Este es el lugar donde podrás disfrutar del espectáculo. ¡No te lo pierdas!</p>
+    <!-- Texto final -->
+    <section class="texto-final">
+        <p>Este es el lugar donde podrás disfrutar del espectáculo. ¡No te lo pierdas!</p>
+    </section>
 
 </body>
 </html>

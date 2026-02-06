@@ -1,3 +1,4 @@
+
 /* =====================================================
    FONDO GENERAL
 ===================================================== */
@@ -5,8 +6,8 @@
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;          /* contenedor arriba */
-  padding: 100px 20px 40px;         /* más padding top para bajar el título */
+  align-items: flex-start;
+  padding: 120px 20px 50px;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -17,148 +18,144 @@
 ===================================================== */
 .registro-wrapper {
   width: 100%;
-  max-width: 560px;
+  max-width: 600px;
   text-align: center;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* =====================================================
    ENCABEZADO
 ===================================================== */
 .registro-header {
-  margin-bottom: 18px;              /* margen inferior del header */
+  margin-bottom: 40px;
 }
 
 .registro-header h2 {
-  font-size: 2.8rem;
-  font-weight: 500;
+  font-size: 3rem;
+  font-weight: 700;
   color: #ffffff;
-  text-shadow: 0 0 16px rgba(0, 0, 0, 0.85);
-  margin-bottom: 12px;
-  margin-top: 20px;                 /* bajar el título */
+  margin-bottom: 16px;
+  text-shadow: 0 0 20px rgba(0,0,0,0.9);
 }
 
-.registro-header p {
-  font-size: 1.35rem;               
-  color: #ffffff;
+.registro-header p.descripcion {
+  font-size: 1.5rem;
   font-weight: 500;
-  line-height: 1.6;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #ffeb3b;                /* amarillo visible sobre fondo oscuro */
+  line-height: 1.4;
+  text-shadow: 0 0 12px rgba(0,0,0,0.6);
+  margin-bottom: 50px;           /* espacio entre descripción y tarjeta */
+  white-space: normal;            /* permite que el texto sea flexible */
+  text-align: center;
+  max-width: 100%;
 }
 
 /* =====================================================
    TARJETA REGISTRO
 ===================================================== */
 .registro-card {
-  padding: 30px;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(12px);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 36px;
+  background: rgba(0,0,0,0.72);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.35);
   color: #ffffff;
-  text-align: center;
+  text-align: left;
+  width: 100%;
 }
 
 /* ALERTA */
-.registro-card .alert-danger {
-  border-radius: 8px;
-  font-size: 1.05rem;
-  margin-bottom: 18px;
+.alert-danger {
+  border-radius: 10px;
+  font-size: 1.1rem;
+  margin-bottom: 22px;
 }
 
 /* FORMULARIO */
 .registro-card label {
-  display: block;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-weight: 700;
+  font-size: 1.1rem;
   color: #ffffff;
-  font-size: 1.05rem;
 }
 
 .registro-card .form-control {
-  width: 100%;
-  padding: 14px;
+  padding: 14px 15px;
   font-size: 1.05rem;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  margin-bottom: 16px;
-  color: #212529; /* 🔹 Letras negras al escribir */
+  margin-bottom: 18px;
+  color: #212529;
 }
 
 .registro-card .form-control:focus {
   border-color: #66b0ff;
-  box-shadow: 0 0 10px rgba(102, 176, 255, 0.4);
+  box-shadow: 0 0 10px rgba(102,176,255,0.5);
 }
 
 /* BOTONES */
 .registro-actions {
   display: flex;
   justify-content: center;
-  gap: 14px;
-  margin-top: 20px;
+  gap: 18px;
+  margin-top: 30px;
 }
 
 .registro-actions .btn {
-  padding: 12px 26px;
+  padding: 12px 30px;
   font-size: 1.05rem;
   font-weight: 700;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
-.registro-actions .btn-primary {
-  background-color: #007bff;
-  border: none;
-}
-
-.registro-actions .btn-primary:hover {
-  background-color: #0056b3;
-}
-
-.registro-actions .btn-success {
-  background-color: #28a745;
-  border: none;
-}
-
-.registro-actions .btn-success:hover {
-  background-color: #218838;
-}
-
-/* TEXTO DEBAJO DE LA TARJETA */
+/* =====================================================
+   TEXTO DEBAJO DE LA TARJETA
+===================================================== */
 .registro-extra {
-  margin-top: 26px;                 
-  font-size: 1.25rem;               
+  margin-top: 38px;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #ffffff;
+  text-align: center;
 }
 
 .registro-extra span {
   display: block;
-  margin-top: 6px;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  color: #a8d8ff;                   
+  color: #ffeb3b;
+  margin-top: 8px;
 }
 
-/* RESPONSIVE */
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 @media (max-width: 480px) {
   .registro-bg {
-    padding-top: 60px;
+    padding-top: 70px;
   }
 
   .registro-header h2 {
-    font-size: 2.3rem;
+    font-size: 2.4rem;
   }
 
-  .registro-header p {
-    font-size: 1.15rem;
+  .registro-header p.descripcion {
+    font-size: 1.25rem;
+  }
+
+  .registro-card {
+    padding: 26px;
   }
 
   .registro-extra {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .registro-extra span {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 }

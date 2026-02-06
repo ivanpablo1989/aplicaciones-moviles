@@ -1,3 +1,4 @@
+
 /* ======================================================
    RESET
 ====================================================== */
@@ -21,256 +22,152 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    line-height: 1.6;
+    line-height: 1.7;
     position: relative;
 }
 
 .fondo-body {
     position: fixed;
     inset: 0;
-    background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-position: center;
     z-index: -1;
-    filter: brightness(1.1) contrast(1.05); /* Fondo más claro */
+    filter: brightness(1.1) contrast(1.05);
 }
 
 /* ======================================================
-   INTRO (Título y Descripción fuera de la tarjeta)
+   INTRO
 ====================================================== */
 .intro-text {
     text-align: center;
-    margin: 100px 20px 30px; /* Título más arriba */
+    margin: 100px 20px 40px;
     max-width: 900px;
-    z-index: 1;
 }
 
 .intro-text h1 {
     font-size: 3rem;
-    font-weight: 700;
     color: #ffffff;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
+    text-shadow: 2px 2px 12px rgba(0,0,0,.7);
 }
 
 .intro-text p {
     font-size: 1.45rem;
-    color: #ff0;
-    font-weight: 500;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+    color: #ffeb3b;
+    text-shadow: 1px 1px 6px rgba(0,0,0,.5);
 }
 
 /* ======================================================
-   TARJETA ESPECTÁCULO
+   TARJETA
 ====================================================== */
-.registro-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
 .tarjeta-espectaculo {
-    background: rgba(30, 30, 30, 0.35);  /* Más transparente */
+    background: rgba(30,30,30,.35);
     backdrop-filter: blur(6px);
     border-radius: 16px;
-    padding: 25px;
+    padding: 28px;
+    max-width: 680px;
     width: 90%;
-    max-width: 680px; /* Más chica que antes */
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    align-items: center;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    margin: 0 auto;
+    text-align: center;
 }
 
 /* ======================================================
-   NOMBRE Y DESCRIPCIÓN DENTRO DE LA TARJETA
+   INFO TARJETA
 ====================================================== */
-.espectaculo-info {
-    text-align: center;
-    width: 100%;
-}
-
 .espectaculo-nombre {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 8px;
+    font-size: 2.2rem;
 }
 
 .espectaculo-descripcion {
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     color: #ffeb3b;
-    font-weight: 500;
-    margin-bottom: 12px;
 }
 
 /* ======================================================
-   IMAGEN DEL ESPECTÁCULO
+   IMAGEN
 ====================================================== */
-.imagen {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
 .imagen-espectaculo {
-    width: 180px;  /* Más flexible y más chica */
+    width: 180px;
     height: 180px;
-    object-fit: cover;
     border-radius: 16px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
-    transition: transform 0.3s ease;
-}
-
-.imagen-espectaculo:hover {
-    transform: scale(1.05);
 }
 
 /* ======================================================
-   DETALLES GENERALES
+   DETALLES
 ====================================================== */
 .detalles-fila {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    font-size: 1.05rem;
-    margin-bottom: 10px;
+    font-size: 1.15rem;
 }
 
 .detalles-fila li {
     flex-basis: 48%;
-    margin-bottom: 10px;
-}
-
-.detalles li strong {
-    font-weight: 700;
+    margin-bottom: 12px;
 }
 
 /* ======================================================
    ESTADO
 ====================================================== */
-.estado.disponible {
-    color: #4caf50;
+.estado {
+    font-size: 1.4rem;
     font-weight: 700;
-    font-size: 1.25rem;
 }
 
-.estado.agotado {
-    color: #ff5252;
-    font-weight: 700;
-    font-size: 1.25rem;
-}
+.estado.disponible { color: #4caf50; }
+.estado.agotado { color: #ff5252; }
 
 /* ======================================================
-   LOGIN / BOTÓN
-====================================================== */
-.reserva-login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.texto-login {
-    font-size: 1.1rem;
-    color: #ffffff;
-    text-align: center;
-}
-
-.boton-login {
-    padding: 10px 28px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: #fff;
-    border-radius: 28px;
-    text-decoration: none;
-    background: linear-gradient(135deg, #00cfff, #0077ff);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
-}
-
-.boton-login:hover {
-    background: linear-gradient(135deg, #33d9ff, #3399ff);
-    transform: scale(1.08);
-}
-
-/* ======================================================
-   MAPA Y TEXTO DEBAJO
+   MAPA (AJUSTADO)
 ====================================================== */
 .mapa-section {
     text-align: center;
-    margin: 35px auto;
-    width: 90%;
-    max-width: 600px;
+    margin: 60px auto 40px;
+    max-width: 700px;
 }
 
 .mapa-titulo {
-    font-size: 1.9rem;
+    font-size: 2.4rem;              /* MÁS GRANDE */
     font-weight: 700;
-    margin-bottom: 18px;
+    margin-bottom: 28px;            /* MÁS SEPARACIÓN */
     color: #ffffff;
+    text-shadow: 2px 2px 12px rgba(0,0,0,.6);
 }
 
 .mapa-descripcion {
-    font-size: 1.15rem;
-    margin-bottom: 25px;
-    color: #ffffff;
+    font-size: 1.35rem;
+    margin-bottom: 35px;            /* ALEJADO DEL MAPA */
+    color: #ffeb3b;
+    text-shadow: 1px 1px 6px rgba(0,0,0,.5);
 }
 
-.mapa-externa img {
-    width: 100%;
-    max-width: 350px; /* Imagen más flexible */
-    height: auto;
-    object-fit: contain;
+.imagen-mapa {
+    max-width: 350px;
     border-radius: 16px;
 }
 
-.texto-debajo-mapa {
-    font-size: 1.25rem;
+/* ======================================================
+   TEXTO FINAL
+====================================================== */
+.texto-final {
+    margin: 35px 20px 60px;
     text-align: center;
-    margin-top: 18px;
-    margin-bottom: 25px;
-    color: #ffffff;
+}
+
+.texto-final p {
+    font-size: 1.6rem;
+    color: #ffeb3b;
+    font-weight: 600;
+    text-shadow: 2px 2px 10px rgba(0,0,0,.7);
 }
 
 /* ======================================================
    RESPONSIVE
 ====================================================== */
 @media (max-width: 768px) {
-    .intro-text h1 {
-        font-size: 2.5rem;
-    }
-
-    .intro-text p {
-        font-size: 1.25rem;
-    }
-
-    .tarjeta-espectaculo {
-        padding: 20px;
-        max-width: 95%;
-    }
-
-    .imagen-espectaculo {
-        width: 150px;
-        height: 150px;
-    }
-
-    .detalles-fila li {
-        flex-basis: 100%;
-    }
-
     .mapa-titulo {
-        font-size: 1.7rem;
+        font-size: 2rem;
     }
 
     .mapa-descripcion {
-        font-size: 1.05rem;
-    }
-
-    .texto-debajo-mapa {
-        font-size: 1.15rem;
+        font-size: 1.2rem;
     }
 }

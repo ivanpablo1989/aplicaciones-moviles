@@ -1,3 +1,4 @@
+
 <!-- Enlazamos el CSS exclusivo para el login -->
 <link rel="stylesheet" href="<?= base_url('activos/css/login/body_login.css?v=' . time()) ?>">
 
@@ -8,7 +9,9 @@
         <!-- ENCABEZADO -->
         <div class="login-header">
             <h1><?= $titulo ?></h1>
-            <p>Ingresá con tu usuario para acceder a todos los eventos</p>
+            <p class="login-descripcion">
+                Ingresá con tu usuario para acceder a todos los eventos
+            </p>
         </div>
 
         <?php if ($this->session->flashdata('error')): ?>

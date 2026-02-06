@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +10,7 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- CSS personalizado -->
-  <link rel="stylesheet" href="<?= base_url('activos/css/registrar_usuario/body_registrar_usuario.css'); ?>">
+  <link rel="stylesheet" href="<?= base_url('activos/css/registrar_usuario/body_registrar_usuario.css?v=' . time()); ?>">
 </head>
 
 <body style="background-image: url('<?= $fondo; ?>');">
@@ -20,15 +21,17 @@
 
       <!-- Header -->
       <div class="registro-header">
-        <h2>regístrate para continuar</h2>
-        <p>Rellena tus datos personales para crear una cuenta.</p>
+        <h2>Registrate para continuar</h2>
+        <p class="descripcion">
+          Completá tus datos personales para crear una cuenta y disfrutar de todos nuestros servicios sin limitaciones.
+        </p>
       </div>
 
-        <?php if (isset($error)): ?>
-          <div class="alert-danger">
-            <strong>Atención:</strong> <?= $error; ?>
-          </div>
-        <?php endif; ?>
+      <?php if (isset($error)): ?>
+        <div class="alert alert-danger">
+          <strong>Atención:</strong> <?= $error; ?>
+        </div>
+      <?php endif; ?>
 
       <!-- Tarjeta de registro -->
       <div class="registro-card">
@@ -69,22 +72,24 @@
           </div>
 
           <div class="registro-actions">
-            <button type="submit" class="btn btn-success">Registrar</button>
+            <button type="submit" class="btn btn-success">Crear cuenta</button>
             <a href="<?= site_url('login'); ?>" class="btn btn-primary">Iniciar sesión</a>
           </div>
 
         </form>
       </div>
 
-      <!-- Texto extra debajo de la tarjeta -->
+      <!-- Texto extra debajo -->
       <div class="registro-extra">
-        <span>Al registrarte aceptas nuestros Términos y Condiciones y la Política de Privacidad.</span>
+        <span>
+          Al registrarte aceptás nuestros Términos y Condiciones y la Política de Privacidad
+        </span>
       </div>
 
     </div>
   </div>
 
-  <!-- jQuery y Bootstrap -->
+  <!-- JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 </body>
