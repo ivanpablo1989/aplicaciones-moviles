@@ -6,7 +6,7 @@ class Acerca extends CI_Controller
     public function index() 
     {
         $data['fondo']  = base_url('activos/imagenes/mi_fondo.jpg');
-        $data['titulo'] = 'Acerca de UNLa Tienda';
+        $data['titulo'] = 'Acerca de Espectaculos UNLa';
 
         // Header común
         $this->load->view('header_footer/header_footer_principal', $data);

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,7 +9,7 @@
     <link rel="stylesheet" href="<?= base_url('activos/css/body_footer/body_footer_politicas.css'); ?>">
 </head>
 
-<body style="background-image: url('<?= $fondo; ?>');">
+<body style="background-image: url('<?= $fondo; ?>'); background-size: cover; background-position: center center; background-attachment: fixed;">
 
     <!-- ===============================
          TEXTO INTRODUCTORIO
@@ -32,7 +31,7 @@
         <div class="cuadro-politicas">
             <h2>Políticas</h2>
 
-            <p>
+            <p class="texto-principal">
                 Aquí encontrarás nuestras políticas de privacidad,
                 uso y condiciones de servicio.
             </p>

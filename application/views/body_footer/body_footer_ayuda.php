@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,8 +20,7 @@
     <!-- Tarjeta de ayuda -->
     <main class="main-content">
         <div class="cuadro-ayuda text-center">
-            <h2>Ayuda</h2>
-            <p>
+            <p class="texto-principal">
                 En esta sección encontrarás información y soporte para aprovechar al máximo UNLa Tienda.
             </p>
             <p class="extra-info">

@@ -17,16 +17,15 @@ html {
 body {
     min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
+
+    /* Blancos más blancos */
     color: #ffffff;
 
-    /* Fondo original, nítido */
-    background-color: #121212;
+    background-color: #0b0b0b;
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
-    image-rendering: -webkit-optimize-contrast;
 }
 
 /* ======================================================
@@ -34,7 +33,7 @@ body {
 ====================================================== */
 .inicio-container {
     min-height: 100vh;
-    padding: 30px 0 40px;
+    padding: 40px 0 50px;
 }
 
 /* ======================================================
@@ -51,108 +50,107 @@ body {
 ====================================================== */
 .bienvenida {
     text-align: center;
-    margin-bottom: 42px;
+    margin-bottom: 55px;
 }
 
 .mensaje-bienvenida {
-    font-size: 3.1rem;
-    font-weight: 600;
-    margin-bottom: 14px;
-    margin-top: -18px;
+    font-size: 3.4rem;
+    font-weight: 700;
+    margin-bottom: 18px;
     color: #ffffff;
 }
 
 .mensaje-sub {
-    font-size: 1.4rem;
-    line-height: 1.8;
-    color: #e2e2e2;
+    font-size: 1.5rem;
+    line-height: 1.9;
+    color: #f1f1f1;
 }
 
 /* ======================================================
    CARTELERA
 ====================================================== */
 .cartelera {
-    padding-bottom: 40px;
+    padding-bottom: 50px;
 }
 
 .tarjetas-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 28px;
-    max-width: 1350px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 36px;
+    max-width: 1450px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
 }
 
 /* ======================================================
    TARJETA
 ====================================================== */
 .tarjeta {
-    background: rgba(0, 0, 0, 0.18); /* glass limpio */
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 28px;
+    background: rgba(0, 0, 0, 0.45); /* MÁS NEGRO */
+    backdrop-filter: blur(12px);
+
+    border-radius: 18px;
+    padding: 36px;
     text-align: center;
 
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
 
-    max-width: 330px;
+    max-width: 380px;
     width: 100%;
     margin: 0 auto;
 
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .tarjeta:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
 }
 
 /* ======================================================
    CONTENIDO TARJETA
 ====================================================== */
 .nombre-artista {
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 800;
     color: #ffffff;
 }
 
 .imagen {
-    width: 165px;
-    height: 165px;
+    width: 185px;
+    height: 185px;
     object-fit: cover;
-    border-radius: 14px;
+    border-radius: 16px;
     margin: 0 auto;
 }
 
 .descripcion {
-    font-size: 1.85rem;
-    line-height: 1.7;
-    color: #d9e6ff; /* suave, legible */
+    font-size: 1.6rem; /* MÁS GRANDE */
+    line-height: 1.85;
+    color: #ffffff;
 }
 
 .precio {
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: #6bb2ff;
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #7bbcff;
 }
 
 /* ======================================================
    BOTÓN
 ====================================================== */
 .boton-ver {
-    margin: 22px auto 0;
-    padding: 12px 26px;
-    font-size: 1.1rem;
-    font-weight: 700;
+    margin: 26px auto 0;
+    padding: 14px 32px;
+    font-size: 1.15rem;
+    font-weight: 800;
     color: #ffffff;
     background-color: #0d6efd;
     text-decoration: none;
-    border-radius: 9px;
+    border-radius: 10px;
     width: fit-content;
-    white-space: nowrap;
 
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
@@ -167,11 +165,11 @@ body {
 ====================================================== */
 .texto-general {
     text-align: center;
-    font-size: 1.75rem;
-    line-height: 1.75;
-    margin: 55px auto 0;
-    max-width: 950px;
-    color: #f0f0f0;
+    font-size: 1.8rem;
+    line-height: 1.8;
+    margin: 65px auto 0;
+    max-width: 1000px;
+    color: #ffffff;
 }
 
 /* ======================================================
@@ -179,60 +177,30 @@ body {
 ====================================================== */
 @media (max-width: 992px) {
     .tarjeta {
-        max-width: 290px;
-        padding: 24px;
+        max-width: 340px;
+        padding: 30px;
     }
 
     .imagen {
-        width: 150px;
-        height: 150px;
-    }
-
-    .nombre-artista {
-        font-size: 1.65rem;
+        width: 160px;
+        height: 160px;
     }
 
     .descripcion {
-        font-size: 1.35rem;
-    }
-
-    .precio {
-        font-size: 1.3rem;
+        font-size: 1.45rem;
     }
 }
 
 @media (max-width: 768px) {
-    .inicio-container {
-        padding-top: 20px;
-    }
-
     .mensaje-bienvenida {
-        font-size: 2.45rem;
-        margin-top: -10px;
+        font-size: 2.7rem;
     }
 
     .mensaje-sub {
-        font-size: 1.3rem;
-    }
-
-    .imagen {
-        width: 130px;
-        height: 130px;
-    }
-
-    .nombre-artista {
-        font-size: 1.55rem;
-    }
-
-    .descripcion {
-        font-size: 1.25rem;
-    }
-
-    .precio {
-        font-size: 1.2rem;
+        font-size: 1.35rem;
     }
 
     .texto-general {
-        font-size: 1.5rem;
+        font-size: 1.55rem;
     }
 }

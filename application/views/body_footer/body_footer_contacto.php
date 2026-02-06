@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +8,7 @@
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="<?= base_url('activos/css/body_footer/body_footer_contacto.css'); ?>">
 </head>
-<body style="background-image: url('<?= $fondo; ?>');">
+<body style="background-image: url('<?= $fondo; ?>'); background-size: cover; background-position: center center; background-attachment: fixed;">
 
     <!-- TEXTO INTRODUCTORIO -->
     <section class="intro-text text-center">
@@ -20,12 +19,12 @@
     <!-- TARJETA DE CONTACTO -->
     <main class="main-content">
         <div class="cuadro-contacto text-center">
-            <h2>Contacto</h2>
-            <p>
-                Escríbenos a <strong>contacto@unla.edu.ar</strong> o llámanos al <strong>(011) 1234-5678</strong> para recibir atención personalizada.
+            <p class="texto-principal">
+                Escríbenos a <strong>ivaninfonet@gmail.com</strong> o llámanos al <strong>(011) 11 - 2310 - 6932</strong> para recibir atención personalizada.
             </p>
             <p class="extra-info">
                 Nuestro equipo responde de lunes a viernes, de 9:00 a 18:00.
+                Somos los mas responsable de zona sur
             </p>
         </div>
     </main>

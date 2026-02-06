@@ -6,13 +6,20 @@
   box-sizing: border-box;
 }
 
-/* =============================== FONDO GENERAL =============================== */
+/* =============================== PALETA =============================== */
+:root {
+  --blanco-fuerte: #f5f5f5;       /* texto general del body */
+  --celeste-fuerte: #a0e6ff;      /* texto principal dentro de la tarjeta */
+  --celeste-secundario: #8bdfff;  /* texto secundario de la tarjeta */
+}
+
+/* =============================== BASE =============================== */
 body {
   min-height: 100vh;
   font-family: 'Segoe UI', Arial, sans-serif;
-  color: #ffffff;
 
-  /* Fondo nítido */
+  color: var(--blanco-fuerte);
+  background-color: #080808;
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -21,173 +28,123 @@ body {
   image-rendering: -webkit-optimize-contrast;
 }
 
-/* =============================== TEXTO INTRO =============================== */
+/* =============================== INTRO =============================== */
 .intro-text {
   text-align: center;
-  margin: 120px auto 45px;
-  max-width: 820px;
-  padding: 0 22px;
+  margin: 130px auto 60px;
+  max-width: 900px;
+  padding: 0 24px;
 }
 
 .intro-text h1 {
-  font-size: 3.1rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 14px;
-  letter-spacing: 0.4px;
-  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.45);
+  font-size: 3.4rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 0.6px;
+
+  color: var(--blanco-fuerte);
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.7);
 }
 
 .intro-text p {
-  font-size: 1.35rem;
-  line-height: 1.65;
-  color: #ffffff;
-  opacity: 0.9;
+  font-size: 1.45rem;
+  line-height: 1.75;
+
+  color: var(--blanco-fuerte);
+  opacity: 0.95;
 }
 
-/* =============================== CONTENIDO PRINCIPAL =============================== */
+/* =============================== MAIN =============================== */
 .main-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 22px;
-  gap: 30px;
+  gap: 40px;
+  padding: 0 24px 60px;
 }
 
-/* =============================== TARJETA ACERCA (GLASS) =============================== */
+/* =============================== TARJETA =============================== */
 .cuadro-acerca {
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
 
-  padding: 44px 36px;
-  max-width: 650px;
+  padding: 56px 48px;
+  max-width: 720px;
   width: 100%;
+  text-align: center;
 
   box-shadow:
-    0 14px 40px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    0 22px 65px rgba(0, 0, 0, 0.75),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
 
-  text-align: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .cuadro-acerca:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   box-shadow:
-    0 18px 50px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
-}
-
-/* =============================== TÍTULO TARJETA =============================== */
-.cuadro-acerca h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #ffffff;
-  letter-spacing: 0.4px;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+    0 30px 90px rgba(0, 0, 0, 0.85),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 /* =============================== TEXTO TARJETA =============================== */
-.cuadro-acerca p {
-  font-size: 1.2rem;
-  line-height: 1.65;
-  color: #ffffff;
-  opacity: 0.95;
-  margin-bottom: 14px;
+.texto-principal {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  font-weight: 600;
+
+  color: var(--celeste-fuerte);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+
+  margin-bottom: 26px;
 }
 
 .extra-info {
-  font-size: 1.1rem;
-  color: #ffffff;
-  opacity: 0.85;
+  font-size: 1.3rem;
+  line-height: 1.75;
+  font-weight: 500;
+
+  color: var(--celeste-secundario);
 }
 
-/* =============================== TEXTO DEBAJO =============================== */
+/* =============================== TEXTO FINAL =============================== */
 .texto-debajo {
-  margin-top: 36px;
-  max-width: 740px;
+  max-width: 850px;
   text-align: center;
 }
 
 .texto-debajo p {
-  font-size: 1.3rem;
-  font-weight: 500;
-  line-height: 1.65;
-  color: #ffffff;
-  opacity: 0.95;
+  font-size: 1.45rem;
+  line-height: 1.75;
+  font-weight: 600;
+
+  color: var(--blanco-fuerte);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
 /* =============================== RESPONSIVE =============================== */
 @media (max-width: 768px) {
-  .intro-text {
-    margin-top: 90px;
-  }
+  .intro-text h1 { font-size: 2.6rem; }
+  .intro-text p { font-size: 1.3rem; }
 
-  .intro-text h1 {
-    font-size: 2.5rem;
-  }
+  .cuadro-acerca { padding: 44px 32px; }
 
-  .intro-text p {
-    font-size: 1.2rem;
-  }
+  .texto-principal { font-size: 1.4rem; }
+  .extra-info { font-size: 1.2rem; }
 
-  .cuadro-acerca {
-    padding: 36px 28px;
-    max-width: 95%;
-  }
-
-  .cuadro-acerca h2 {
-    font-size: 2.05rem;
-  }
-
-  .cuadro-acerca p {
-    font-size: 1.05rem;
-  }
-
-  .extra-info {
-    font-size: 1rem;
-  }
-
-  .texto-debajo p {
-    font-size: 1.15rem;
-  }
+  .texto-debajo p { font-size: 1.3rem; }
 }
 
 @media (max-width: 480px) {
-  .intro-text {
-    margin-top: 80px;
-  }
+  .intro-text h1 { font-size: 2.1rem; }
+  .intro-text p { font-size: 1.15rem; }
 
-  .intro-text h1 {
-    font-size: 2rem;
-  }
+  .texto-principal { font-size: 1.2rem; }
+  .extra-info { font-size: 1.1rem; }
 
-  .intro-text p {
-    font-size: 1.05rem;
-  }
-
-  .cuadro-acerca {
-    padding: 28px 22px;
-  }
-
-  .cuadro-acerca h2 {
-    font-size: 1.7rem;
-  }
-
-  .cuadro-acerca p {
-    font-size: 0.95rem;
-  }
-
-  .extra-info {
-    font-size: 0.95rem;
-  }
-
-  .texto-debajo p {
-    font-size: 1.05rem;
-  }
+  .texto-debajo p { font-size: 1.15rem; }
 }

@@ -9,6 +9,7 @@
 </head>
 
 <body style="background-image: url('<?= isset($fondo) ? $fondo : '' ?>');">
+
 <main class="inicio-container">
 
     <!-- =========================
@@ -74,10 +75,9 @@
 
         </div>
 
-        <!-- Texto final -->
         <div class="texto-general texto-limitado">
             ¡No te pierdas ninguno de nuestros eventos destacados!
-            son los mejores del mundo
+            Son los mejores del mundo.
         </div>
     </section>
 
