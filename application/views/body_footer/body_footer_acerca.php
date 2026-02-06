@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,23 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?= $titulo; ?></title>
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="<?= base_url('activos/css/body_footer/body_footer_acerca.css'); ?>">
 </head>
 
-<body style="background-image: url('<?= $fondo; ?>'); background-size: cover; background-position: center center;">
+<body style="background-image: url('<?= $fondo; ?>');">
 
-  <!-- Texto fuera de la tarjeta -->
-  <section class="intro-text text-center">
+  <!-- Texto introductorio fuera de la tarjeta -->
+  <section class="intro-text">
     <h1><?= $titulo; ?></h1>
     <p>Un espacio pensado para estudiantes</p>
   </section>
 
   <!-- Contenedor principal -->
-  <main class="main-content d-flex flex-column align-items-center">
+  <main class="main-content">
+
+    <!-- Tarjeta Acerca -->
     <div class="cuadro-acerca">
       <h2><?= $titulo; ?></h2>
       <p>
@@ -33,14 +33,12 @@
       </p>
     </div>
 
-    <div class="texto-debajo text-center">
+    <!-- Texto adicional debajo -->
+    <div class="texto-debajo">
       <p>¡Aprovecha todas las herramientas y recursos que tenemos para ti!</p>
     </div>
+
   </main>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
-
 </html>

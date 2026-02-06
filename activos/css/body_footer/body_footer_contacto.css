@@ -1,140 +1,161 @@
-/* =============================== FONDO GENERAL =============================== */
-body {
+
+/* =============================== RESET =============================== */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* =============================== FONDO GENERAL =============================== */
+body {
     min-height: 100vh;
     font-family: 'Segoe UI', Arial, sans-serif;
     color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    image-rendering: -webkit-optimize-contrast;
+    position: relative;
+    z-index: 0;
+}
 
-    /* Overlay ligero para claridad del texto */
-    background-color: rgba(255,255,255,0.08);
-    background-blend-mode: lighten;
+/* Overlay ligero */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.25);
+    z-index: 0;
 }
 
 /* =============================== TEXTO INTRO =============================== */
 .intro-text {
     text-align: center;
-    margin: 120px auto 40px auto;
+    margin: 120px auto 45px;
     max-width: 800px;
     padding: 0 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .intro-text h1 {
     font-size: 3rem;
     font-weight: 600;
-    color: #e9f3ff;
+    color: #ffffff;
     margin-bottom: 12px;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.35);
+    letter-spacing: 0.4px;
+    text-shadow: 0 3px 12px rgba(0,0,0,0.45);
 }
 
 .intro-text p {
-    font-size: 1.3rem;
-    opacity: 0.9;
-    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.65;
+    color: #ffffff;
+    opacity: 0.95;
 }
 
-/* =============================== MAIN TARJETA =============================== */
+/* =============================== TARJETA DE CONTACTO =============================== */
 .main-content {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     padding: 0 20px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
 }
 
 .cuadro-contacto {
     background: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 16px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 18px;
     border: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 40px 30px;
-    max-width: 500px;
-    width: 90%;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+    padding: 44px 36px;
+    max-width: 550px;
+    width: 100%;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
     text-align: center;
-    transition: all 0.3s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .cuadro-contacto:hover {
-    background-color: rgba(0, 0, 0, 0.45);
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 14px 36px rgba(0,0,0,0.45);
 }
 
-/* TÍTULO TARJETA */
 .cuadro-contacto h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 16px;
-    color: #7ee8fa;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.35);
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 3px 12px rgba(0,0,0,0.45);
 }
 
-/* TEXTO INTERNO TARJETA */
 .cuadro-contacto p {
     font-size: 1.2rem;
-    line-height: 1.6;
-    color: #eef9ff;
+    line-height: 1.65;
+    color: #ffffff;
     opacity: 0.95;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .extra-info {
-    font-size: 1.05rem;
-    color: #d6f1ff;
-    opacity: 0.9;
+    font-size: 1.1rem;
+    color: #ffffff;
+    opacity: 0.85;
 }
 
-/* =============================== TEXTO ADICIONAL =============================== */
+/* =============================== TEXTO DEBAJO DE LA TARJETA =============================== */
 .texto-adicional {
-    margin: 20px auto 60px auto;
+    margin: 30px auto 60px;
     max-width: 700px;
     padding: 0 20px;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .texto-adicional p {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     font-weight: 500;
     color: #ffffff;
-    opacity: 0.95;
+    line-height: 1.65;
 }
 
-/* =============================== TEXTO PEQUEÑO PIE =============================== */
-.small-info-container {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.small-info {
-    font-size: 1.25rem;
-    color: #ffffff;
-    opacity: 1;
-    font-weight: bold;
-    font-style: italic;
+/* =============================== FOOTER =============================== */
+.main-footer {
+    position: relative; /* Para estar sobre overlay */
+    z-index: 10;
 }
 
 /* =============================== RESPONSIVE =============================== */
 @media (max-width: 768px) {
+    .intro-text {
+        margin-top: 90px;
+    }
     .intro-text h1 { font-size: 2.5rem; }
-    .intro-text p { font-size: 1.15rem; }
-
-    .cuadro-contacto { padding: 30px; max-width: 92%; }
-    .cuadro-contacto h2 { font-size: 2rem; }
-    .cuadro-contacto p { font-size: 1rem; }
-
-    .texto-adicional p { font-size: 1.15rem; }
-    .small-info { font-size: 1.1rem; }
+    .intro-text p { font-size: 1.2rem; }
+    .cuadro-contacto { padding: 36px 28px; max-width: 92%; }
+    .cuadro-contacto h2 { font-size: 2.05rem; }
+    .cuadro-contacto p { font-size: 1.05rem; }
+    .extra-info { font-size: 1rem; }
+    .texto-adicional p { font-size: 1.2rem; }
 }
 
 @media (max-width: 480px) {
-    .intro-text h1 { font-size: 2rem; margin-top: 100px; }
+    .intro-text {
+        margin-top: 80px;
+    }
+    .intro-text h1 { font-size: 2rem; }
     .intro-text p { font-size: 1rem; }
-
-    .cuadro-contacto { padding: 25px; }
-    .cuadro-contacto h2 { font-size: 1.6rem; }
+    .cuadro-contacto { padding: 28px 22px; }
+    .cuadro-contacto h2 { font-size: 1.7rem; }
     .cuadro-contacto p { font-size: 0.95rem; }
-
+    .extra-info { font-size: 0.95rem; }
     .texto-adicional p { font-size: 1rem; }
-    .small-info { font-size: 1rem; }
 }

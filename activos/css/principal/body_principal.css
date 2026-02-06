@@ -8,7 +8,7 @@
 }
 
 /* ======================================================
-   BASE Y FONDO FLEXIBLE
+   BASE Y FONDO
 ====================================================== */
 html {
     min-height: 100%;
@@ -18,11 +18,15 @@ body {
     min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
     color: #ffffff;
+
+    /* Fondo original, nítido */
     background-color: #121212;
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
+    image-rendering: -webkit-optimize-contrast;
 }
 
 /* ======================================================
@@ -30,7 +34,7 @@ body {
 ====================================================== */
 .inicio-container {
     min-height: 100vh;
-    padding: 30px 0 40px;   /* ⬅ sube todo el contenido para el título */
+    padding: 30px 0 40px;
 }
 
 /* ======================================================
@@ -39,7 +43,7 @@ body {
 .texto-limitado {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 16px;
 }
 
 /* ======================================================
@@ -47,19 +51,21 @@ body {
 ====================================================== */
 .bienvenida {
     text-align: center;
-    margin-bottom: 40px;   /* espacio debajo del título */
+    margin-bottom: 42px;
 }
 
 .mensaje-bienvenida {
-    font-size: 3.2rem;    /* ⬅ más grande */
-    font-weight: 600;      /* menos grueso */
-    margin-bottom: 16px;
-    margin-top: -20px;     /* sube el título */
+    font-size: 3.1rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    margin-top: -18px;
+    color: #ffffff;
 }
 
 .mensaje-sub {
-    font-size: 1.45rem;   /* ⬅ más grande */
+    font-size: 1.4rem;
     line-height: 1.8;
+    color: #e2e2e2;
 }
 
 /* ======================================================
@@ -71,9 +77,9 @@ body {
 
 .tarjetas-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 25px;
-    max-width: 1300px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    max-width: 1350px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -82,67 +88,72 @@ body {
    TARJETA
 ====================================================== */
 .tarjeta {
-    background: rgba(0, 0, 0, 0.25); /* más transparente */
-    backdrop-filter: blur(12px);      /* efecto glass ligero */
-    border-radius: 15px;
-    padding: 25px;
+    background: rgba(0, 0, 0, 0.18); /* glass limpio */
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 28px;
     text-align: center;
+
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    gap: 16px;
 
-    max-width: 300px; /* ancho máximo */
-    width: 100%;      /* ocupa ancho hasta el máximo */
-    margin: 0 auto;   /* centra si hay un solo espectáculo */
+    max-width: 330px;
+    width: 100%;
+    margin: 0 auto;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tarjeta:hover {
     transform: translateY(-4px);
-    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
 }
 
 /* ======================================================
    CONTENIDO TARJETA
 ====================================================== */
 .nombre-artista {
-    font-size: 2rem;      /* ⬅ un poco más grande */
+    font-size: 1.8rem;
     font-weight: 700;
+    color: #ffffff;
 }
 
 .imagen {
-    width: 170px;
-    height: 170px;
+    width: 165px;
+    height: 165px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 14px;
     margin: 0 auto;
 }
 
 .descripcion {
-    font-size: 1.35rem;   /* ⬅ más grande */
+    font-size: 1.85rem;
     line-height: 1.7;
+    color: #d9e6ff; /* suave, legible */
 }
 
 .precio {
-    font-size: 1.45rem;
+    font-size: 1.35rem;
     font-weight: 700;
-    color: #4da3ff;
+    color: #6bb2ff;
 }
 
 /* ======================================================
    BOTÓN
 ====================================================== */
 .boton-ver {
-    margin: 20px auto 0;
-    padding: 12px 25px;     
-    font-size: 1.15rem;    /* ⬅ un poco más grande */
+    margin: 22px auto 0;
+    padding: 12px 26px;
+    font-size: 1.1rem;
     font-weight: 700;
-    color: #fff;
+    color: #ffffff;
     background-color: #0d6efd;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 9px;
     width: fit-content;
     white-space: nowrap;
+
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -152,14 +163,15 @@ body {
 }
 
 /* ======================================================
-   TEXTO FINAL (ARRIBA DEL FOOTER)
+   TEXTO FINAL
 ====================================================== */
 .texto-general {
     text-align: center;
-    font-size: 1.65rem;   /* ⬅ más grande */
-    line-height: 1.7;
-    margin: 50px auto 0;
-    max-width: 900px;
+    font-size: 1.75rem;
+    line-height: 1.75;
+    margin: 55px auto 0;
+    max-width: 950px;
+    color: #f0f0f0;
 }
 
 /* ======================================================
@@ -167,57 +179,60 @@ body {
 ====================================================== */
 @media (max-width: 992px) {
     .tarjeta {
-        max-width: 260px;
-        padding: 20px;
+        max-width: 290px;
+        padding: 24px;
     }
+
     .imagen {
         width: 150px;
         height: 150px;
     }
+
     .nombre-artista {
-        font-size: 1.8rem;
+        font-size: 1.65rem;
     }
+
     .descripcion {
-        font-size: 1.25rem;
-    }
-    .precio {
         font-size: 1.35rem;
     }
-    .boton-ver {
-        padding: 10px 22px;
-        font-size: 1.1rem;
+
+    .precio {
+        font-size: 1.3rem;
     }
 }
 
 @media (max-width: 768px) {
     .inicio-container {
-        padding-top: 20px;   /* título más arriba en móvil */
+        padding-top: 20px;
     }
+
     .mensaje-bienvenida {
-        font-size: 2.5rem;
+        font-size: 2.45rem;
         margin-top: -10px;
     }
+
     .mensaje-sub {
         font-size: 1.3rem;
     }
+
     .imagen {
         width: 130px;
         height: 130px;
     }
+
     .nombre-artista {
-        font-size: 1.6rem;
+        font-size: 1.55rem;
     }
+
     .descripcion {
-        font-size: 1.2rem;
-    }
-    .precio {
         font-size: 1.25rem;
     }
-    .boton-ver {
-        padding: 9px 20px;
-        font-size: 1.05rem;
+
+    .precio {
+        font-size: 1.2rem;
     }
+
     .texto-general {
-        font-size: 1.45rem;
+        font-size: 1.5rem;
     }
 }

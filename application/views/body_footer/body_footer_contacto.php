@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,19 +9,19 @@
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="<?= base_url('activos/css/body_footer/body_footer_contacto.css'); ?>">
 </head>
-<body style="background-image: url('<?= $fondo; ?>'); background-size: cover; background-position: center center; background-attachment: fixed;">
+<body style="background-image: url('<?= $fondo; ?>');">
 
-    <!-- Texto introductorio -->
+    <!-- TEXTO INTRODUCTORIO -->
     <section class="intro-text text-center">
         <h1>¿Necesitas ayuda o información?</h1>
         <p>Estamos aquí para asistirte en todo lo relacionado con nuestros servicios universitarios.</p>
     </section>
 
-    <!-- Tarjeta de contacto -->
+    <!-- TARJETA DE CONTACTO -->
     <main class="main-content">
         <div class="cuadro-contacto text-center">
-            <h2 class="animated-title">Contacto</h2>
-            <p class="animated-text">
+            <h2>Contacto</h2>
+            <p>
                 Escríbenos a <strong>contacto@unla.edu.ar</strong> o llámanos al <strong>(011) 1234-5678</strong> para recibir atención personalizada.
             </p>
             <p class="extra-info">
@@ -29,10 +30,10 @@
         </div>
     </main>
 
-    <!-- Texto adicional debajo de la tarjeta -->
-    <div class="texto-adicional text-center">
+    <!-- TEXTO DEBAJO DE LA TARJETA -->
+    <section class="texto-adicional text-center">
         <p>Si tienes alguna consulta o inquietud adicional, no dudes en ponerte en contacto con nosotros. ¡Estamos aquí para ayudarte!</p>
-    </div>
+    </section>
 
 </body>
 </html>
