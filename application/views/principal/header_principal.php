@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= isset($titulo) ? $titulo : 'UNLa Tienda' ?></title>
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- CSS exclusivo del header -->
     <link rel="stylesheet" href="<?= base_url('activos/css/principal/header_principal.css?v=' . time()) ?>">
 </head>
+
+<body>
 
 <header class="main-header">
     <div class="header-container">
@@ -19,8 +24,15 @@
 
         <!-- Navegación -->
         <nav class="nav-menu">
-            <a href="<?= base_url('login'); ?>" class="btn btn-login">Login</a>
-            <a href="<?= base_url('registrar'); ?>" class="btn btn-register">Registrar</a>
+            <a href="<?= base_url('login'); ?>" class="btn-login">Login</a>
+            <a href="<?= base_url('registrar'); ?>" class="btn-register">Registrar</a>
         </nav>
     </div>
 </header>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
