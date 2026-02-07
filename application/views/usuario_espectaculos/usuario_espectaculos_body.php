@@ -1,9 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Cartelera de espectáculos</title>
 
+    <!-- Bootstrap CSS (para flexibilidad) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS personalizado -->
     <link rel="stylesheet"
           href="<?= base_url('activos/css/usuario_espectaculos/usuario_espectaculos_body.css'); ?>">
 </head>
@@ -11,7 +16,8 @@
 
 <?php
 $estilo_fondo = '';
-if (!empty($fondo)) {
+if (!empty($fondo)) 
+{
     $estilo_fondo = 'style="background-image: url(' . $fondo . ');"';
 }
 ?>
@@ -43,23 +49,16 @@ if (!empty($fondo)) {
                                  alt="<?= $espectaculo['nombre']; ?>"
                                  class="imagen">
 
-                            <p class="descripcion">
-                                <?= $espectaculo['descripcion']; ?>
-                            </p>
+                            <p class="descripcion"><?= $espectaculo['descripcion']; ?></p>
 
-                            <p class="precio">
-                                $<?= number_format($espectaculo['precio'], 2, ',', '.'); ?>
-                            </p>
+                            <p class="precio">$<?= number_format($espectaculo['precio'], 2, ',', '.'); ?></p>
 
                             <a href="<?= site_url('espectaculos/espectaculo_logueado/' . $espectaculo['id_espectaculo']); ?>"
-                               class="boton-ver">
-                                Ver espectáculo
+                               class="boton-ver">Ver espectáculo
                             </a>
                         </article>
 
-                        <p class="texto-extra">
-                            ¡No te pierdas esta experiencia única!
-                        </p>
+                        <p class="texto-extra">¡No te pierdas esta experiencia única!</p>
 
                     </div>
 
@@ -75,5 +74,7 @@ if (!empty($fondo)) {
 
 </main>
 
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

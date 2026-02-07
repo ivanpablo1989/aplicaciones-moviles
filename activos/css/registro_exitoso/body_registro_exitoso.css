@@ -2,14 +2,24 @@
 /* =========================
    GENERAL
 ========================= */
-body {
+body, html {
     margin: 0;
+    padding: 0;
+    height: 100%;
     font-family: 'Segoe UI', sans-serif;
-    min-height: 100vh;
-    color: #ffffff;
+}
+
+/* FONDO */
+.fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    z-index: -1;
 }
 
 /* =========================
@@ -17,169 +27,110 @@ body {
 ========================= */
 .inicio-container {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 120px; /* SEPARACIÓN DEL HEADER */
-    padding-bottom: 40px;
-    gap: 30px;
+    padding-top: 140px;
+    padding-bottom: 50px;
+    gap: 50px;
 }
 
 /* =========================
    TEXTO SUPERIOR
 ========================= */
-.mensaje-superior {
-    text-align: center;
-    max-width: 700px;
-    padding: 0 20px;
-}
-
 .mensaje-superior h2 {
-    font-size: 2.3rem; 
-    margin-bottom: 10px;
+    font-size: 2.8rem;
     color: #ffffff;
-}
-
-.mensaje-superior p {
-    font-size: 1.2rem;
-    color: #f8f8f8;
-}
-
-/* =========================
-   TARJETA (CASI TRANSPARENTE)
-========================= */
-.contenido {
-    background-color: rgba(0, 0, 0, 0.1); /* MÍNIMO DE NEGRO */
-    backdrop-filter: blur(6px);
-    padding: 32px 28px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    max-width: 480px;
-    width: 100%;
-    text-align: center;
-}
-
-/* =========================
-   TEXTOS TARJETA (LETRAS MÁS PEQUEÑAS)
-========================= */
-.titulo {
-    font-size: 2.3rem; /* UN POCO MÁS CHICA */
-    color: #ffffff;
-    margin-top: 10px;
-    margin-bottom: 14px;
-}
-
-.mensaje {
-    font-size: 1.25rem;
-    color: #f0f0f0;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
     margin-bottom: 12px;
 }
 
-.submensaje {
-    font-size: 1.15rem;
-    color: #eaeaea;
-    margin-bottom: 24px;
+.mensaje-superior p {
+    font-size: 1.6rem;
+    color: #FFD700; /* amarillo dorado */
+}
+
+/* =========================
+   TARJETA
+========================= */
+.contenido {
+    background-color: rgba(0, 0, 0, 0.45); /* más oscuro */
+    backdrop-filter: blur(10px);
+    padding: 50px 40px;
+    border-radius: 28px;
+    max-width: 560px;
+    width: 100%;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+}
+
+/* =========================
+   TEXTOS TARJETA
+========================= */
+.titulo {
+    font-size: 3rem;
+    color: #ffffff; /* blanco */
+    margin-bottom: 20px;
+}
+
+.mensaje {
+    font-size: 1.5rem; /* más grande */
+    color: #FFD700; /* amarillo */
+    margin-bottom: 28px;
 }
 
 /* =========================
    BOTONES
 ========================= */
-.botones {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    flex-wrap: wrap;
-}
-
-.boton {
-    text-decoration: none;
-    padding: 14px 28px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 10px;
-    color: #ffffff;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-}
-
-/* Botón verde - Página Principal */
 .boton-verde {
     background-color: rgba(25, 135, 84, 0.95);
+    color: #fff;
+    border-radius: 12px;
+    padding: 16px 32px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .boton-verde:hover {
     background-color: rgba(21, 115, 71, 1);
-    transform: scale(1.06);
+    transform: scale(1.07);
 }
 
-/* Botón azul - Login */
 .boton-azul {
     background-color: rgba(13, 110, 253, 0.95);
+    color: #fff;
+    border-radius: 12px;
+    padding: 16px 32px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .boton-azul:hover {
     background-color: rgba(11, 94, 215, 1);
-    transform: scale(1.06);
+    transform: scale(1.07);
 }
 
 /* =========================
-   TEXTO DEBAJO DE LA TARJETA
+   TEXTO INFERIOR
 ========================= */
-.mensaje-inferior {
-    text-align: center;
-    max-width: 700px;
-    padding: 0 20px;
-}
-
 .mensaje-inferior p {
-    font-size: 1.5rem; 
-    color: #ffffff;    
-    margin-top: 16px;
-    line-height: 1.6;
+    font-size: 1.55rem;
+    color: #ffffff;
+    line-height: 1.65;
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 576px) {
+    .mensaje-superior h2 { font-size: 2.2rem; }
+    .mensaje-superior p { font-size: 1.3rem; }
 
-    .mensaje-superior h2 {
-        font-size: 2rem;
-    }
+    .contenido { padding: 36px 28px; }
 
-    .mensaje-superior p {
-        font-size: 1.05rem;
-    }
+    .titulo { font-size: 2.5rem; }
+    .mensaje { font-size: 1.35rem; }
 
-    .contenido {
-        padding: 26px 22px;
-    }
+    .boton-verde, .boton-azul { width: 100%; text-align: center; font-size: 1.1rem; padding: 14px 0; }
 
-    .titulo {
-        font-size: 2rem;
-    }
-
-    .mensaje {
-        font-size: 1.15rem;
-    }
-
-    .submensaje {
-        font-size: 1.05rem;
-    }
-
-    .botones {
-        flex-direction: column;
-        gap: 14px;
-    }
-
-    .boton {
-        width: 100%;
-        text-align: center;
-        font-size: 1.05rem;
-    }
-
-    .mensaje-inferior p {
-        font-size: 1.35rem;
-    }
+    .mensaje-inferior p { font-size: 1.35rem; }
 }

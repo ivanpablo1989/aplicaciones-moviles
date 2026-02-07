@@ -23,7 +23,7 @@
       <div class="registro-header">
         <h2>Registrate para continuar</h2>
         <p class="descripcion">
-          Completá tus datos personales para crear una cuenta y disfrutar de todos nuestros servicios sin limitaciones.
+          Completá tus datos personales para crear una cuenta 
         </p>
       </div>
 

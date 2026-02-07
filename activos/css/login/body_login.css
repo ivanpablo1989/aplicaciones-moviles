@@ -50,8 +50,9 @@
 /* =====================================================
    TARJETA LOGIN
 ===================================================== */
+
 .login-card {
-  margin-top: 18px;      /* BAJA UN POQUITO LA TARJETA */
+  margin-top: 8px;      /* TARJETA SUBE UN POCO */
   padding: 32px;
   background: rgba(0,0,0,0.7);
   backdrop-filter: blur(14px);
@@ -61,6 +62,7 @@
   color: #ffffff;
   font-size: 1.08rem;
 }
+
 
 .login-text {
   font-size: 1.35rem;

@@ -4,9 +4,10 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 17px;
-    line-height: 1.65;
+    font-size: 16px;
+    line-height: 1.6;
     color: #ffffff;
+    background-color: #111;
 }
 
 /* ===============================
@@ -19,247 +20,177 @@ body {
     background-position: center;
     background-attachment: fixed;
     z-index: -1;
+    filter: brightness(0.9) contrast(1.1);
 }
 
 /* ===============================
-   CONTENEDOR
+   INTRO
 ================================ */
-.container {
-    min-height: 100vh;
-    padding: 5.5rem 1rem 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.intro .titulo-espectaculo {
+    font-size: 2.4rem;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+.intro .descripcion-intro {
+    font-size: 1.35rem;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
 }
 
 /* ===============================
-   INTRO (TEXTOS FUERA DE TARJETA)
+   CARD PRINCIPAL COMPACTA
 ================================ */
-.intro {
-    max-width: 780px;
-    text-align: center;
-    margin-bottom: 3.2rem;
-}
-
-.intro h2 {
-    font-size: 2.65rem;
-    font-weight: 400;
-    margin-bottom: 0.9rem;
-    color: #ffffff; /* 🔹 BLANCO FUERTE */
-    text-shadow: 0 3px 10px rgba(0,0,0,0.75); /* 🔹 MÁS FUERZA */
-}
-
-.intro p {
-    font-size: 1.4rem;
-    font-weight: 400;
-    color: #ffffff; /* 🔹 BLANCO FUERTE */
-    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
-}
-
-/* ===============================
-   TARJETA
-================================ */
-.card {
-    max-width: 600px;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.45);
+.card-principal {
+    background: rgba(0,0,0,0.65);
     backdrop-filter: blur(8px);
-    border-radius: 16px;
-    padding: 1.8rem;
-    text-align: center;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.45);
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    max-width: 600px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-principal:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.5);
 }
 
 /* ===============================
-   TEXTO TARJETA (SIN CAMBIOS)
+   DESCRIPCIÓN Y TITULO TARJETA
 ================================ */
 .titulo-espectaculo {
-    font-size: 2.1rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: #ffffff;
+    margin-bottom: 0.8rem;
 }
 
 .descripcion {
     font-size: 1.25rem;
-    line-height: 1.7;
-    margin-bottom: 1.3rem;
+    margin-bottom: 1rem;
     color: #eaeaea;
 }
 
 /* ===============================
-   IMAGEN
+   IMAGEN ARTISTA
 ================================ */
-.imagen-wrapper {
-    margin: 1.4rem 0;
+.imagen-artista {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.55);
+    transition: transform 0.3s ease;
 }
 
-.imagen-wrapper img {
-    width: 185px;
-    height: 185px;
-    border-radius: 14px;
-    object-fit: cover;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.55);
+.imagen-artista:hover {
+    transform: scale(1.05);
 }
 
 /* ===============================
-   DETALLES
+   DETALLES DEL EVENTO
 ================================ */
-.detalles {
-    text-align: left;
-    margin: 1.4rem 0;
-}
-
-.detalles h3 {
-    font-size: 1.45rem;
-    margin-bottom: 0.6rem;
-    color: #7CFF8A;
-}
-
 .detalles li {
-    font-size: 1.15rem;
-    margin-bottom: 0.45rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
     color: #f2f2f2;
 }
 
 /* ===============================
-   BLOQUE INFERIOR
+   BLOQUE DE ENTRADAS Y FORMULARIO
 ================================ */
-.card-bottom {
-    margin-top: 1.4rem;
+.entradas {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffd966;
+    margin-bottom: 0.8rem;
 }
 
-.entradas {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    color: #ffd966;
+.formulario label {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.input-cantidad {
+    max-width: 120px;
+    margin: 0 auto;
+}
+
+/* ===============================
+   BOTONES
+================================ */
+.btn {
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-sm {
+    padding: 0.35rem 0.9rem;
+    font-size: 0.875rem;
+}
+
+.btn:hover {
+    transform: scale(1.05);
 }
 
 /* ===============================
    ALERTAS
 ================================ */
 .alert {
-    padding: 0.8rem;
-    font-size: 1.05rem;
     border-radius: 6px;
-    margin-bottom: 1rem;
-}
-
-.alert.success {
-    background: rgba(40, 167, 69, 0.9);
-}
-
-.alert.error {
-    background: rgba(220, 53, 69, 0.9);
+    padding: 0.6rem 0.9rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
 }
 
 /* ===============================
-   FORMULARIO
+   MAPA
 ================================ */
-.formulario label {
-    font-size: 1.15rem;
-    margin-bottom: 0.5rem;
-    display: block;
-    color: #ffffff;
-}
-
-.formulario input {
-    width: 60%;
-    padding: 0.45rem;
-    font-size: 1.05rem;
-    border-radius: 6px;
-    margin-bottom: 1.2rem;
-}
-
-/* ===============================
-   BOTONES
-================================ */
-.botones {
-    display: flex;
-    justify-content: center;
-    gap: 1.2rem;
-}
-
-.btn {
-    padding: 0.6rem 1.4rem;
-    font-size: 1.05rem;
-    border-radius: 7px;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.btn.reservar {
-    background: linear-gradient(135deg, #1b5e20, #2e7d32);
-}
-
-.btn.volver {
-    background: linear-gradient(135deg, #0d47a1, #1565c0);
-}
-
-/* ===============================
-   MAPA (TEXTOS FUERA DE TARJETA)
-================================ */
-.mapa-section {
-    margin-top: 4.5rem;
-    text-align: center;
-    max-width: 900px;
-}
-
 .mapa-section h2 {
-    font-size: 2.3rem;
-    margin-bottom: 1.6rem;
-    color: #ffffff; /* 🔹 BLANCO FUERTE */
-    text-shadow: 0 3px 10px rgba(0,0,0,0.75);
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
 }
 
-.mapa-intro {
-    font-size: 1.35rem;
-    margin-bottom: 2.2rem;
-    color: #ffffff; /* 🔹 BLANCO FUERTE */
-    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+.mapa-intro, .mapa-texto {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
 }
 
 .mapa-externa img {
-    max-width: 440px;
+    max-width: 400px;
     width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.6);
-}
-
-.mapa-texto {
-    font-size: 1.25rem;
-    max-width: 760px;
-    margin: 2rem auto 0;
-    color: #ffffff; /* 🔹 BLANCO FUERTE */
-    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
 }
 
 /* ===============================
    RESPONSIVE
 ================================ */
+@media (max-width: 992px) {
+    .intro .titulo-espectaculo { font-size: 2.2rem; }
+    .intro .descripcion-intro { font-size: 1.25rem; }
+    .descripcion { font-size: 1.15rem; }
+    .imagen-artista { width: 140px; height: 140px; }
+    .detalles li { font-size: 1rem; }
+    .entradas { font-size: 1.1rem; }
+}
+
 @media (max-width: 768px) {
-    body {
-        font-size: 16px;
-    }
+    .intro .titulo-espectaculo { font-size: 2rem; }
+    .intro .descripcion-intro { font-size: 1.15rem; }
+    .descripcion { font-size: 1.1rem; }
+    .imagen-artista { width: 120px; height: 120px; }
+    .detalles li { font-size: 0.95rem; }
+    .entradas { font-size: 1rem; }
+}
 
-    .card {
-        max-width: 94%;
-    }
-
-    .imagen-wrapper img {
-        width: 150px;
-        height: 150px;
-    }
-
-    .intro h2 {
-        font-size: 2.3rem;
-    }
-
-    .intro p {
-        font-size: 1.25rem;
-    }
-
-    .formulario input {
-        width: 80%;
-    }
+@media (max-width: 480px) {
+    .intro .titulo-espectaculo { font-size: 1.8rem; }
+    .intro .descripcion-intro { font-size: 1.05rem; }
+    .descripcion { font-size: 1rem; }
+    .imagen-artista { width: 100px; height: 100px; }
+    .detalles li { font-size: 0.9rem; }
+    .entradas { font-size: 0.95rem; }
 }
