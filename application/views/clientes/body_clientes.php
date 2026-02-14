@@ -8,28 +8,27 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="<?= base_url('activos/css/clientes/body_clientes.css'); ?>">
 </head>
+
 <body>
-    <main class="inicio-container" style="background-image: url('<?= $fondo ?>');">
 
-        <!-- Encabezado -->
-        <header class="header-text">
-            <h2>Listado de Clientes</h2>
-            <p>A continuación se muestran todos los clientes registrados en el sistema</p>
-        </header>
+<main class="inicio-container" style="background-image: url('<?= $fondo ?>');">
 
-        <?php if (!empty($clientes)): ?>
-            <section class="table-container table-responsive">
-                <table class="table table-hover table-dark clientes-table">
-                    <thead class="table-primary">
+    <!-- ENCABEZADO -->
+    <header class="header-text">
+        <h2>Listado de Clientes</h2>
+        <p>A continuación se muestran todos los clientes registrados en el sistema</p>
+    </header>
+
+    <?php if (!empty($clientes)): ?>
+
+        <section class="table-container">
+
+            <div class="table-responsive">
+                <table class="table table-hover clientes-table">
+                    <thead>
                         <tr>
                             <th>ID Cliente</th>
                             <th>Email</th>
@@ -50,25 +49,24 @@
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-            </section>
-        <?php else: ?>
-            <p class="no-datos"><?= $mensaje ?? 'No hay datos disponibles.' ?></p>
-        <?php endif; ?>
+            </div>
 
-        <!-- Texto adicional fuera de la tarjeta -->
-        <p class="info-adicional">Si necesitas más información, no dudes en ponerte en contacto con nosotros.</p>
+        </section>
 
-    </main>
+    <?php else: ?>
 
-    <!-- Opcional: pequeño script para animación o mejoras -->
-    <script>
-        $(document).ready(function() {
-            $('.clientes-table tbody tr').hover(function() {
-                $(this).addClass('shadow-lg');
-            }, function() {
-                $(this).removeClass('shadow-lg');
-            });
-        });
-    </script>
+        <p class="no-datos">
+            <?= $mensaje ?? 'No hay datos disponibles.' ?>
+        </p>
+
+    <?php endif; ?>
+
+    <!-- TEXTO FINAL -->
+    <p class="info-adicional">
+        Si necesitas más información, no dudes en ponerte en contacto con nosotros.
+    </p>
+
+</main>
+
 </body>
 </html>

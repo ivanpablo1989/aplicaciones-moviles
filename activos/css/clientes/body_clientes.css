@@ -1,99 +1,88 @@
-
 /* ======================================================
-   BASE PERSONALIZADO
+   CONTENEDOR GENERAL
 ====================================================== */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212;
-    color: #f8f9fa;
-    min-height: 100vh;
-}
-
 .inicio-container {
-    padding: 120px 15px 40px;
-    min-height: calc(100vh - 100px);
+    padding-top: 120px;
+    padding-bottom: 50px;
+    min-height: calc(100vh - 120px);
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    justify-content: flex-start;
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
+    color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
 }
 
 /* ======================================================
    ENCABEZADO
 ====================================================== */
 .header-text {
-    text-align: center;
-    max-width: 900px;
     margin-bottom: 40px;
+    max-width: 750px;
 }
 
 .header-text h2 {
+    margin-bottom: 20px;
     font-size: 2.8rem;
-    font-weight: 500;
-    margin-bottom: 15px;
-    letter-spacing: 0.8px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
     color: #ffffff;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 .header-text p {
-    font-size: 1.35rem;
-    color: #e6e6e6;
+    font-size: 1.5rem;
+    color: #ffffff;
     line-height: 1.8;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* ======================================================
-   TABLA PERSONALIZADA
+   TABLA CLIENTES
 ====================================================== */
 .table-container {
-    width: 100%;
-    max-width: 950px;
-    background-color: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(10px);
-    padding: 25px;
-    border-radius: 14px;
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+    width: 85%;
+    max-width: 900px;
     overflow-x: auto;
-    margin-bottom: 30px;
+
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente */
+    backdrop-filter: blur(8px);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    margin-bottom: 40px;
 }
 
 .clientes-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 1rem;
-    color: #f5f5f5;
+    font-size: 1.1rem;
 }
 
+/* Encabezado de la tabla */
 .clientes-table thead {
-    background-color: rgba(13, 110, 253, 0.9);
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    color: #ffffff;
+    background-color: rgba(0, 123, 255, 0.9);
 }
 
+/* Color del texto dentro de la tabla (th y td) */
 .clientes-table th,
 .clientes-table td {
-    padding: 12px 14px;
+    color: #ffffff; /* Letras blancas */
+    padding: 12px 15px;
     text-align: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.clientes-table tbody tr {
-    transition: background-color 0.25s ease, transform 0.2s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: transparent; /* Asegura que no haya blanco */
 }
 
 .clientes-table tbody tr:hover {
     background-color: rgba(255, 255, 255, 0.08);
-    transform: scale(1.01);
-}
-
-.clientes-table td {
-    color: #f0f8ff;
+    transition: background-color 0.3s ease;
 }
 
 .clientes-table th {
@@ -103,51 +92,66 @@ body {
 }
 
 /* ======================================================
-   MENSAJE SIN DATOS
+   MENSAJE NO DATOS
 ====================================================== */
 .no-datos {
-    margin-top: 30px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px;
     font-style: italic;
-    color: #eeeeee;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* ======================================================
-   TEXTO ADICIONAL FUERA DE LA TARJETA
+   TEXTO ADICIONAL
 ====================================================== */
 .info-adicional {
     font-size: 1.3rem;
     color: #ffffff;
+    margin-top: 40px;
+    max-width: 750px;
     text-align: center;
     line-height: 1.8;
-    margin-top: 40px;
     font-style: italic;
 }
 
 /* ======================================================
-   RESPONSIVE PERSONALIZADO
+   RESPONSIVE
 ====================================================== */
 @media (max-width: 768px) {
+    .inicio-container {
+        padding-top: 80px;
+    }
+
     .header-text h2 {
-        font-size: 2rem;
+        font-size: 2.3rem;
     }
+
     .header-text p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
+
+    .table-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .clientes-table {
+        font-size: 1rem;
+    }
+
     .info-adicional {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        margin-top: 20px;
     }
 }
 
 @media (max-width: 480px) {
     .header-text h2 {
-        font-size: 1.7rem;
+        font-size: 2rem;
     }
+
     .header-text p {
-        font-size: 1.05rem;
-    }
-    .info-adicional {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 }
