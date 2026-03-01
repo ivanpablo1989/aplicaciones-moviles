@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-02-2026 a las 22:30:32
+-- Tiempo de generación: 14-02-2026 a las 19:15:28
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 7.4.30
 
@@ -32,36 +32,6 @@ CREATE TABLE `clientes` (
   `usuario_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `clientes`
---
-
-INSERT INTO `clientes` (`id_cliente`, `usuario_id`) VALUES
-(8, 1),
-(9, 1),
-(10, 1),
-(25, 1),
-(11, 2),
-(12, 2),
-(13, 2),
-(14, 2),
-(15, 2),
-(21, 2),
-(22, 2),
-(23, 2),
-(24, 2),
-(3, 3),
-(4, 3),
-(5, 3),
-(6, 3),
-(7, 3),
-(16, 8),
-(17, 8),
-(18, 8),
-(19, 8),
-(20, 8),
-(26, 11);
-
 -- --------------------------------------------------------
 
 --
@@ -85,10 +55,14 @@ CREATE TABLE `espectaculos` (
 --
 
 INSERT INTO `espectaculos` (`id_espectaculo`, `nombre`, `descripcion`, `disponibles`, `precio`, `direccion`, `fecha`, `hora`, `imagen`) VALUES
-(4, 'nicky nicole', 'la mas chetada y ss', 1094, '3.00', 'belgrano 444', '2026-01-28', '19:33:00', 'd93b76989e1519aae44517cffe25dcd5.jpg'),
-(5, 'duki el trapero del norte', 'el trapero del sur', 0, '12.00', 'paris 234', '2026-01-31', '17:33:00', '9387321787fe94258ecac36747c3e398.jpg'),
-(6, 'maria becerra', 'la mas chetada', 220, '11.00', 'camino negro 1111', '2026-02-07', '13:35:00', 'be21f80e4256e773f28d5259442a4493.jpg'),
-(11, 'marisol klubus', 'la mas inteligente del mundo', 10, '3.00', 'solis 444', '2026-02-25', '18:51:00', 'f5d00383acea2d6b3a93da8c847b2349.jpg');
+(5, 'duki', 'el trapero del norte', 888, '12.00', 'paris 234', '2026-01-31', '17:33:00', 'a8691dfd80f13cfc8d81df274cc7d1c0.jpg'),
+(12, 'maria becerra', 'lo mejor de este mundo', 5, '77.00', 'peron 333', '2026-02-27', '12:34:00', '4edc0fb1380e39263569f32155c41602.jpg'),
+(13, 'chayane', 'el mejor cantante del centro', 33326, '22.00', 'mitre 446', '2026-03-12', '21:16:00', 'b9aee80025b12607c10db0fb8a814e3d.jpg'),
+(15, 'ricky martin', 'la musica viviente', 15555, '33.00', 'paris 234', '2026-03-11', '17:02:00', '1b6099025806cfadd691f09572e2e6bc.jpg'),
+(16, 'shakira', 'la mejor de colombia', 1555, '21.00', 'mitre 446', '2026-03-14', '16:03:00', '9ea678f859ed97b1283cdab5e3342586.jpg'),
+(17, 'luis miguel', 'lo mejor de los romanticos', 3333, '33.00', 'camino negro 1111', '2026-03-11', '21:04:00', '1ad53b00c986106d503903f0f3200435.jpg'),
+(18, 'rusher king', 'el cantante latino', 33322, '55.00', 'avenida roca 433', '2026-02-17', '18:05:00', '518b77172eb6ddddee58da074b3b0a98.jpg'),
+(19, 'trueno', 'la palabra', 4444, '18.00', 'paris 234', '2026-02-18', '18:06:00', '33747b007354f4977ce060c0fe27f3d6.jpg');
 
 -- --------------------------------------------------------
 
@@ -105,22 +79,6 @@ CREATE TABLE `reservas` (
   `monto_total` decimal(10,2) NOT NULL,
   `estado` enum('activa','cancelada') NOT NULL DEFAULT 'activa'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `reservas`
---
-
-INSERT INTO `reservas` (`id_reserva`, `usuario_id`, `espectaculo_id`, `cantidad`, `fecha_reserva`, `monto_total`, `estado`) VALUES
-(10, 1, 4, 2, '2026-02-03', '4444.00', 'activa'),
-(15, 2, 6, 3, '2026-02-03', '36.00', 'activa'),
-(18, 8, 4, 3, '2026-02-03', '6666.00', 'activa'),
-(19, 8, 5, 1, '2026-02-03', '12.00', 'activa'),
-(20, 8, 6, 5, '2026-02-03', '60.00', 'activa'),
-(23, 2, 4, 2, '2026-02-05', '4444.00', 'activa'),
-(24, 2, 4, 2, '2026-02-05', '4444.00', 'activa'),
-(25, 2, 6, 2, '2026-02-05', '24.00', 'activa'),
-(26, 1, 4, 3, '2026-02-05', '6666.00', 'cancelada'),
-(27, 11, 4, 2, '2026-02-05', '4444.00', 'cancelada');
 
 -- --------------------------------------------------------
 
@@ -164,15 +122,12 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `rol_id`, `activo`, `nombre_usuario`, `palabra_clave`, `nombre`, `apellido`, `dni`, `telefono`) VALUES
-(1, 1, 1, 'ivaninfonorte@gmail.com', '1234', 'agustin', 'rossi', 111, '11-4156-3813'),
-(2, 1, 1, 'ivaninfosur@gmail.com', '1234', 'miguel', 'angel', 2147483647, '11-2310-8788'),
-(3, 1, 1, 'ivaninfoeste@gmail.com', '1234', 'pablo', 'abel', 33333, '4444-4444'),
+(1, 1, 1, 'ivaninfonorte@gmail.com', '1234', 'pablo', 'ivan', 1234, '11-2310-6932'),
+(2, 1, 1, 'ivaninfosur@gmail.com', '1234', 'miguel', 'angel', 33, '11-2310-8788'),
+(3, 1, 1, 'ivaninfoeste@gmail.com', '1234', 'lautaro', 'pou', 111, '22'),
 (5, 2, 1, 'ivaninfonet@gmail.com', '1234', 'pablo', 'tolaba', 2211112, '5555-6666'),
 (6, 2, 1, 'ivaninfonet2@gmail.com', '1234', 'fabian', 'gauto', 44444, '6666-5555'),
-(8, 1, 0, 'ivaninfoeste2@gmail.com', '1234', 'ivan', 'pablo', 0, ''),
-(9, 1, 0, 'abc@hotmail.com', '$2y$10$IAr3fQnQsOYmkQOYqBWuNerHC5g0j3EmRTu7/fCfXBJ5v5yyDLSrm', 'ivan', 'pablo', 0, ''),
-(11, 1, 0, 'b@hotmail.com', '1234', 'b', 'b', 3, '4'),
-(12, 1, 1, 'u@gmail.com', '1234', 'minato', 'shino', 0, '');
+(8, 1, 0, 'ivaninfoeste2@gmail.com', '1234', 'ivan', 'pablo', 0, '');
 
 -- --------------------------------------------------------
 
@@ -188,22 +143,6 @@ CREATE TABLE `ventas` (
   `fecha_venta` date NOT NULL,
   `monto_total` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `ventas`
---
-
-INSERT INTO `ventas` (`id_venta`, `usuario_id`, `espectaculo_id`, `reserva_id`, `fecha_venta`, `monto_total`) VALUES
-(9, 1, 4, 10, '2026-02-03', '4444.00'),
-(14, 2, 6, 15, '2026-02-03', '36.00'),
-(17, 8, 4, 18, '2026-02-03', '6666.00'),
-(18, 8, 5, 19, '2026-02-03', '12.00'),
-(19, 8, 6, 20, '2026-02-03', '60.00'),
-(22, 2, 4, 23, '2026-02-05', '4444.00'),
-(23, 2, 4, 24, '2026-02-05', '4444.00'),
-(24, 2, 6, 25, '2026-02-05', '24.00'),
-(25, 1, 4, 26, '2026-02-05', '6666.00'),
-(26, 11, 4, 27, '2026-02-05', '4444.00');
 
 --
 -- Índices para tablas volcadas
@@ -261,19 +200,19 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `espectaculos`
 --
 ALTER TABLE `espectaculos`
-  MODIFY `id_espectaculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_espectaculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `reservas`
 --
 ALTER TABLE `reservas`
-  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -285,13 +224,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- Restricciones para tablas volcadas
