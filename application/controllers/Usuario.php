@@ -120,21 +120,12 @@ class Usuario extends Seguridad
             'telefono'       => $this->input->post('telefono', true)
         ];
 
-<<<<<<< HEAD
         // Si se envió una contraseña nueva (sin encriptar)
         $password = $this->input->post('password', true);
 
         if ( !empty($password))
         {
             $data['palabra_clave'] = $password;
-=======
-        // Si se envió una contraseña nueva
-        
-        $password = $this->input->post('password', true);
-        if ( !empty($password))
-        {
-            $data['palabra_clave'] = password_hash($password,PASSWORD_DEFAULT) ;
->>>>>>> 6e4e0cb7d649b18e23035ddedf5211d9c8fb4163
         }
 
         if ($this->Usuario_modelo->actualizar_usuario($id_usuario, $data))
@@ -149,12 +140,7 @@ class Usuario extends Seguridad
         redirect('administrador');
     }
 
-<<<<<<< HEAD
     // ESPECTACULOS
-=======
-
-    // ESPECTÁCULOS
->>>>>>> 6e4e0cb7d649b18e23035ddedf5211d9c8fb4163
     public function usuario_espectaculos()
     {
         $data = 

@@ -137,13 +137,8 @@ class Reservar extends CI_Controller
         $this->load->view('footer_footer/footer_footer_usuario', $data);
     }
 
-<<<<<<< HEAD
    // ---------------------- CANCELAR RESERVA ----------------------
    
-=======
-    // ---------------------- CANCELAR RESERVA ----------------------
-
->>>>>>> 6e4e0cb7d649b18e23035ddedf5211d9c8fb4163
     public function cancelar_reserva($id_reserva)
     {
         $usuario_id = $this->session->userdata('id_usuario');
@@ -155,7 +150,6 @@ class Reservar extends CI_Controller
         }
         elseif ($reserva['usuario_id'] != $usuario_id)
         {
-<<<<<<< HEAD
             $this->session->set_flashdata('mensaje', 'No tienes permiso.');
         }
         else
@@ -167,19 +161,6 @@ class Reservar extends CI_Controller
             else
             {
                 $this->session->set_flashdata('mensaje', 'No se pudo cancelar la reserva.');
-=======
-            $this->session->set_flashdata('mensaje','No tienes permiso.');
-        }
-        else
-        {
-            if ($this->reserva->eliminar_reserva($id_reserva))
-            {
-                $this->session->set_flashdata('mensaje','Reserva cancelada.');
-            }
-            else
-            {
-                $this->session->set_flashdata('mensaje','No se pudo cancelar.');
->>>>>>> 6e4e0cb7d649b18e23035ddedf5211d9c8fb4163
             }
         }
 
@@ -236,11 +217,7 @@ class Reservar extends CI_Controller
             $mail->setFrom('ivaninfonet@gmail.com', 'Sistema de Reservas');
             $mail->addAddress($email);
             $mail->isHTML(true);
-<<<<<<< HEAD
             $mail->Subject = 'Confirmacion de reserva';
-=======
-            $mail->Subject = 'Confirmación de reserva';
->>>>>>> 6e4e0cb7d649b18e23035ddedf5211d9c8fb4163
             $mail->Body = '<p>Adjunto comprobante.</p>';
             $mail->addAttachment(FCPATH.'uploads/'.$filename);
 
